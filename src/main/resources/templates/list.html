@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-    <head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head"></head>
 
-    <body>
+<body>
 
-        <div th:replace="fragments :: page-header"></div>
+<div th:replace="fragments :: page-header"></div>
 
-        <div class="container body-content">
-            <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-            <h2 class = "centered">View Jobs By Category</h2>
-        </div>
+<div class="container body-content">
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <h2 class="centered">View Jobs By Category</h2>
+</div>
 
-        <table class="centeredTable">
-            <tr>
-                <th:block th:each="column : ${columns}">
-                    <th th:text = "${column.value}"></th>
-                </th:block>
-            </tr>
-            <tr>
-                <!-- TODO #2: Complete the View Jobs By Category Table. -->
+<table class="centeredTable">
+    <tr>
+        <th:block th:each="column : ${columns}">
+            <th th:text="${column.value}"></th>
+        </th:block>
+    </tr>
+    <tr>
+        <!-- TODO #2: Complete the View Jobs By Category Table. -->
 
-<!--                You can fix this several different ways, but two options are presented below. Note that you only need to implement ONE option, not both.-->
-<!--                Modify tableChoices in ListController to include another key/value pair. Check the method that renders the template to help identify the name to use for the key.-->
-<!--                Modify list.html to fill in the empty table cell with the necessary link. Check ListController to help identify the data to pass in for the query parameters.-->
-<!--                Be sure to test your code by clicking your new View All link in the table. There are 98 jobs in the data file.-->
-<!--                Perce said not to do this and just put <a> and href</a> bascially hard code it in-->
+        <!--                You can fix this several different ways, but two options are presented below. Note that you only need to implement ONE option, not both.-->
+        <!--                Modify tableChoices in ListController to include another key/value pair. Check the method that renders the template to help identify the name to use for the key.-->
+        <!--                Modify list.html to fill in the empty table cell with the necessary link. Check ListController to help identify the data to pass in for the query parameters.-->
+        <!--                Be sure to test your code by clicking your new View All link in the table. There are 98 jobs in the data file.✅-->
+        <!--                Perce said not to do this and just put <a> and href</a> bascially hard code it in-->
+<!--        https://education.launchcode.org/java-web-development/chapters/thymeleaf-views/src&href.html?highlight=href-->
+        <td>
+            <a th:href="@{/list/jobs(column=all,value=all)}">View All</a>
+        </td> <!-- Feel free to remove or modify this element if necessary. -->
 
+        <td th:each="category : ${tableChoices}">
+            <ul>
+                <li th:each="item : ${category.value}">
+                    <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
-
-                <td></td> <!-- Feel free to remove or modify this element if necessary. -->
-
-                <td th:each="category : ${tableChoices}">
-                    <ul>
-                        <li th:each="item : ${category.value}">
-                            <a th:href="@{/list/jobs(column=${category.key},value=${item})}" th:text="${item}"></a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-
-    </body>
+</body>
 </html>
