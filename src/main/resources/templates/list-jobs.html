@@ -18,12 +18,38 @@
 <!--    2. Adding the CSS class "job-listing" to a table provides some nice styling, courtesy of Carly’s work!-->
 <!--    3. Construct a table for each job, with one job field per row.-->
 <!--    4. Be sure to test your code by running the program and clicking links from different categories on the /list page.-->
-<!--    -Clicking the Web - Back End link yields 6 jobs.-->
-<!--    -iOS yields 4 jobs.-->
-<!--    -New York yields 1 job.-->
+<!--    Checks for Correct Working Code-->
+<!--    -Clicking the Web - Back End link yields 6 jobs. ✅-->
+<!--    -iOS yields 4 jobs. ✅-->
+<!--    -New York yields 1 job. ✅-->
 
     <table th:each = "job : ${jobs}" class = "job-listing">
-
+<!--        tr = table row and td and the data "cell" in that row-->
+        <tr>
+            <td>ID: </td>
+            <td th:text="${job.id}"></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td th:text="${job.name}"></td>
+        </tr>
+        <tr>
+            <td>Employer: </td>
+            <td th:text="${job.employer}"></td>
+        </tr>
+        <tr>
+            <td>Location: </td>
+            <td th:text="${job.location}"></td>
+        </tr>
+        <tr>
+            <td>Position Type: </td>
+            <td th:text="${job.positionType}"></td>
+        </tr>
+        </tr>
+        <tr>
+            <td>Core Competency: </td>
+            <td th:text="${job.coreCompetency}"></td>
+        </tr>
     </table>
 
 </div>
