@@ -29,7 +29,7 @@ public class SearchController {
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
 //    The displaySearchResults method should take in a Model parameter. ✅
-//    The method should also take in two other parameters, specifying the type of search and the search term. ✅
+//    The method should also take in two other parameters, \specifying the type of search and the search term. ✅
 //    If the user enters “all” in the search box, or if they leave the box empty, call the findAll() method from JobData.
 //    Otherwise, send the search information to findByColumnAndValue. ✅
 //    In either case, store the results in a jobs ArrayList. ✅
