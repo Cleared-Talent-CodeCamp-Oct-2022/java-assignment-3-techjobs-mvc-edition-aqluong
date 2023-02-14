@@ -22,35 +22,36 @@
 <!--    -Clicking the Web - Back End link yields 6 jobs. ✅-->
 <!--    -iOS yields 4 jobs. ✅-->
 <!--    -New York yields 1 job. ✅-->
-
-    <table th:each = "job : ${jobs}" class = "job-listing">
-<!--        tr = table row and td and the data "cell" in that row-->
-        <tr>
-            <td>ID: </td>
-            <td th:text="${job.id}"></td>
-        </tr>
-        <tr>
-            <td>Name: </td>
-            <td th:text="${job.name}"></td>
-        </tr>
-        <tr>
-            <td>Employer: </td>
-            <td th:text="${job.employer}"></td>
-        </tr>
-        <tr>
-            <td>Location: </td>
-            <td th:text="${job.location}"></td>
-        </tr>
-        <tr>
-            <td>Position Type: </td>
-            <td th:text="${job.positionType}"></td>
-        </tr>
-        </tr>
-        <tr>
-            <td>Core Competency: </td>
-            <td th:text="${job.coreCompetency}"></td>
-        </tr>
-    </table>
+    <!--    Using the fragments.html moved this and list-jobs.html over there to call on the fragments.html-->
+<!--    <table th:each = "job : ${jobs}" class = "job-listing">-->
+<!--&lt;!&ndash;        tr = table row and td and the data "cell" in that row&ndash;&gt;-->
+<!--        <tr>-->
+<!--            <td>ID: </td>-->
+<!--            <td th:text="${job.id}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Name: </td>-->
+<!--            <td th:text="${job.name}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Employer: </td>-->
+<!--            <td th:text="${job.employer}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Location: </td>-->
+<!--            <td th:text="${job.location}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Position Type: </td>-->
+<!--            <td th:text="${job.positionType}"></td>-->
+<!--        </tr>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Core Competency: </td>-->
+<!--            <td th:text="${job.coreCompetency}"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<table th:replace="fragments :: job-listing"></table>
 
 </div>
 
